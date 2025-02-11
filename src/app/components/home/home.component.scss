@@ -1,0 +1,218 @@
+*{
+    box-sizing: border-box;
+    font-family: cursive;
+}
+a{
+    text-decoration: none;
+}
+$head-color:#F29724;
+$main-font:18px;
+
+section{
+    @media screen and (min-width:600px) {
+        display: flex;
+       
+    }
+    
+    aside{
+        background-color: white;
+        margin-bottom: 30px;
+        @media screen and (min-width:600px) {
+            width:25%;
+            margin-bottom: 0;
+        }
+        @media screen and (min-width:800px) {
+            width:15%;
+            margin-bottom: 0;
+        }
+        .aside-container{
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            @media screen and (min-width:600px) {
+                display: block;
+            }
+            
+            .logo{
+                width: 20%;
+                @media screen and (min-width:600px) {
+                    width: 100%;
+                    margin-top: 20px;
+                    margin-bottom: 50px
+                }
+                img{
+                   width: 100%; 
+                } 
+            }
+            .btns{
+                width: 75%;
+               display: flex;
+               justify-content: space-between; 
+               @media screen and (min-width:600px) {
+                display: block;
+                width: 100%;
+            }
+            }
+            .mainbtn{
+                text-align: start;
+                width: 30%;
+                display: flex; 
+                border: 1px solid  black;
+                border-radius: 10px;
+                margin: 15px 0;
+                background-color: $head-color;
+                color: white;
+                @media screen and (min-width:600px) {
+                    width: 100%;
+                    display: block;
+                    padding: 10px ;
+                    font-size: $main-font;
+                    font-weight: 600;
+                }
+                span,img{
+                    margin: 5px 5px 0 0;
+                    @media screen and (min-width:600px) {
+                        margin:0;
+                    }
+                    @media screen and (min-width:900px) {
+                        margin:0 0 0 20px;
+                    }
+                    
+                    
+                    
+                }
+        }
+        .sub-btn{
+            @extend .mainbtn;
+            background-color: #eee;
+            color: black;
+            width: fit-content;
+            @media screen and (min-width:600px) {
+               width: 100%;
+                font-weight: 500;
+            }
+        
+
+        }
+    
+    }
+      
+       
+    
+    }
+    .main-container{
+        padding: 25px;
+        background-color: #eee;
+        width: 100%;
+        @media screen and (min-width:600px) {
+            width: 85%;
+        }
+        h2{
+            font-family: "Pacifico", serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color:$head-color ;
+            margin: 40px 0;
+            
+        }
+        @media screen and (min-width:600px) {
+            font-size: 35px;
+        }
+
+        li{
+            display: inline;
+            list-style: none;
+            .category{
+                color: #4B5563;
+                padding:5px 15px ;
+                margin: 10px ;
+                border-radius: 50px;
+                border: 1px solid grey;
+                font-size: $main-font;
+                
+            }
+            .category:hover{
+                background-color: black;
+                color: white;
+                box-shadow:1px 3px  #4B5563;
+            }
+            
+        }
+        .meals-container{
+            display: flex;
+            flex-wrap: wrap;
+            .meal-inner{
+                padding: 20px;
+                text-align: center;
+                width: 80%;
+                margin: auto;
+                @media screen and (min-width:600px) {
+                    width: 50%;
+                }
+                @media screen and (min-width:800px) {
+                    width: 33%;
+                }
+                @media screen and (min-width:1000px) {
+                    width: 25%;
+                }
+                .card{
+                    background-color: white;
+                    border-radius: 35px;
+                    margin-top: 30px;
+                    transition: all 0.5s ease;
+                    div{
+                        transform: translateY(-50px);
+                    }
+                    img{
+                        width: 70%;
+                        display: inline-block;
+                        margin: auto;
+                        border-radius: 50%;
+                        transition: all 0.8s ease;
+                        
+                    }
+                    img:hover{
+                        transform: rotate(360deg);
+                    }
+                    h3{
+                        color: darkblue;
+                        font-size: 20px;
+                        font-weight: 500;
+                        margin-top: 25px;
+                        
+                    }
+                    p{
+                        color: darkslategrey;
+                        font-size: 17px;
+                        img{
+                            width: 17px;
+                            
+                        }
+                    }
+                    button{
+                        width: 60%;
+                        color: white;
+                        background-color:rgb(38, 158, 38);
+                        transform: translateY(20px);
+                        padding: 7px 15px;
+                        border-radius: 50px;
+                        border: none;
+                        font-size: $main-font;
+                    }
+                    
+                    button:hover{
+                        background-color: #F29724;
+                    }
+                }
+                .card:hover{
+                    transform: scale(1.07);
+                    
+                }
+                
+            }
+        }
+    }
+}
+
+

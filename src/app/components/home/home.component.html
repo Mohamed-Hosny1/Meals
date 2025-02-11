@@ -1,0 +1,68 @@
+<section>
+  <aside>
+    <div class="aside-container">
+      <div class="logo">
+        <img src="/img/logo-BfNap0Pe.png" alt="" />
+      </div>
+      <div class="btns">
+        <button class="mainbtn">
+          <img src="/img/download.svg" alt="fork" />
+          <span> Meals</span>
+        </button>
+        <button class="sub-btn">
+          <img src="/img/download.svg" alt="fork" />
+          <span>Ingredient</span>
+        </button>
+        <button class="sub-btn">
+          <img src="/img/download.svg" alt="fork" />
+          <span>Area</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+  <div class="main-container">
+    <h2>Learn, Cook, Eat Your Food</h2>
+    <nav>
+      <ul>
+        <li>
+          <a href="#" class="category">All</a>
+        </li>
+        @for (categoryName of categoriesName; track $index) {
+        <li>
+          <button (click)="getCategory(categoryName)" class="category">
+            {{ categoriesName[$index] }}
+          </button>
+        </li>
+        }
+      </ul>
+    </nav>
+    <div class="meals-container">
+      @for (Meal of meals; track Meal.idMeal) {
+      <div class="meal-inner">
+        <div class="card">
+          <div>
+            <img [src]="Meal.strMealThumb" alt="Meal img " />
+            <h3>
+              {{
+                (Meal.strIngredient1 ? Meal.strIngredient1 : Meal.strMeal)
+                  .split("")
+                  .slice(0, 20)
+                  .join("")
+              }}
+            </h3>
+            @if (Meal.strArea) {
+            <p>
+              <img src="/img/earth.svg" alt="earth" />
+              {{ Meal.strArea }}
+            </p>
+            }
+            <button [routerLink]="['/mealDetails', Meal.idMeal]">
+              View Recipe
+            </button>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
