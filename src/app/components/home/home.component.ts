@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
   getCategory(meal: any): void {
     this.categoryService.getCategory(meal).subscribe({
       next: (res) => {
-        console.log(res.meals);
         this.meals = res.meals;
       },
       error: (err) => {
@@ -44,7 +43,6 @@ export class HomeComponent implements OnInit {
   getMealData() {
     this.categoryService.getMeal().subscribe({
       next: (res) => {
-        console.log(res.meals);
         this.meals = res.meals;
       },
       error: (err) => {
